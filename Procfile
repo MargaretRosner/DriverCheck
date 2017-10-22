@@ -1,1 +1,1 @@
-web: python3 QEA_webpage.py --log-file -
+web: gunicorn gettingstarted.wsgi --log-file -
