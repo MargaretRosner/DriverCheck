@@ -30,9 +30,9 @@ body, html {
   <div class="w3-bar w3-white w3-card-2" id="myNavbar">
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#about" class="w3-bar-item w3-button">PROJECT</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> LINKS</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
   </div>
@@ -51,21 +51,33 @@ body, html {
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center" style="font-size:30px">ABOUT THE PROJECT</h3>
+  <h3 class="w3-center" style="font-size:30px">THE PROJECT</h3>
   <p class="w3-center w3-large" style="font-size:25px">DESCRIPTION</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p style="font-size:15px">As part of a project for our Quantitive Enineering Analysis class at Olin College we created a proof of concept model for an app that would enable car drivers to
-      quantitatively asses the comfort of their driving based on the magnitude of acceleration and jerk.</p>
+    <p style="font-size:15px">As part of a project for our Quantitative Engineering Analysis class at Olin College we created a proof of concept model
+      for an app that would enable car drivers to quantitatively asses the comfort of their driving based on the magnitude of acceleration and jerk
+      (quick changes in acceleration) measured on their smartphones while driving.
+
+
+
+    </p>
   </div>
   <p class="w3-center w3-large"  style="font-size:25px">USERS</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p  style="font-size:15px">Any individual looking to better understand driving style.
-    We envision our app being used my a diverse audience which could include: parents, driving instructors, and new drivers</p>
+    <p  style="font-size:15px">AAny individual looking to better understand driving style.
+      We envision our app being used by a diverse audience which could include: new drivers, parents, and driving instructors.
+
+
+  </p>
   </div>
   <p class="w3-center w3-large"  style="font-size:25px">Our MVP</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p  style="font-size:15px">Our MVP analyzes two different aspects of driving, aggressiveness and Jerk, based on accelerometer and gyroscope data collected using a user's phone and synthesizes
-      the analysis. We then visualize this data in a useful and compelling manner so drivers can easily understand and compare their driving styles.</p>
+    <p  style="font-size:15px">Our MVP analyzes two different aspects of driving, aggressiveness and jerk, based on accelerometer and gyroscope data collected using a
+       user's phone. The data is then analyzed for comfort based on acceleration and jerk magnitude. To present the data in a useful and compelling manner we then
+       visualize the analysis so drivers can easily understand and compare their driving styles.
+
+
+    </p>
   </div>
 </div>
 
@@ -74,9 +86,15 @@ body, html {
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Sensor Selection</h3>
-      <p  style="font-size:15px">We choose to leverage the sensors already present in a users phone to create our application.<br>
-        We used the PowerSense iphone app to collect the data needed to create our app.
-      <br> See Figure 1. for a visuilization of the type of data collected.</p>
+      <p  style="font-size:15px">
+      We choose to leverage the sensors already present in a user's phone to
+      create our application. We used the PowerSense iphone app to collect the data needed to create our app.
+      See Figure 1. for a visualization of the type of data collected.
+
+
+
+
+    </p>
     </div>
     <div class="w3-col m6">
     <figure>
@@ -88,28 +106,38 @@ body, html {
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Proof of Concept</h3>
-      <p  style="font-size:15px">Using acceleration and gyro data collected from a users smartphone we rotated the accelerations measured by the phone into the global frame and filteres the data to remove
-        high frequencies caused by vibrations in the car itself.<br>
-        We then... </p>
+      <p  style="font-size:15px">
+        Using acceleration and gyro data collected from a user's smartphone we first rotated the accelerations measured by the phone into the global frame to remove gravity
+        and filtered the data using a low pass filter to remove high frequencies. Once the data was in the global reference frame we took the derivative of
+         the accelerations to isolate jerk (sudden changes in acceleration).
+
+      </p>
     </div>
     <div class="w3-col m6">
       <figure>
         <img src="{{ url_for('static', filename='GlobalAcc.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.2 -  </figcaption>
+        <figcaption>Fig.2 - Of a car driving in an ellipse </figcaption>
       </figure>
     </div>
     <div class="w3-col m6">
       <h3>Comfort Analysis</h3>
-      <p tyle="font-size:15px">To analyze the quality of a driver we...</p>
+      <p tyle="font-size:15px">
+        We  choose to define driver comfort as the combination of jerk and maximum acceleration. To analyze driving comfort
+
+
+
+
+
+      </p>
     </div>
     <div class="w3-col m6">
       <figure>
         <img src="{{ url_for('static', filename='ComfortGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.2 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
+        <figcaption>Fig.3 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
       </figure>
       <figure>
         <img src="{{ url_for('static', filename='BarGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.2 - Comfort was assesed through using the scaled integrals in the global frame </figcaption>
+        <figcaption>Fig.4 - Comfort was assesed as the scaled integrals in the global frame </figcaption>
       </figure>
     </div>
   </div>
@@ -117,28 +145,56 @@ body, html {
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Validation</h3>
-      <p  style="font-size:15px">To validate our model the first thing we did was check our rotation matrix<br>tempor incididunt ut labore et dolore.</p>
+      <p  style="font-size:15px">To validate our model the first thing we did was check to ensure our rotation matrix was
+        doing what we expected. We did so by creating a unit vector, [0 0 1], in the khat direction and rotating it into the
+        global frame using the attitude data collected from the phone. We also videotaped a driver driving when we collected our
+        driving data for comfort analysis and compared the videos (<a href="https://photos.app.goo.gl/Vtfh95rC0pEnNO1F2">slow and smooth</a>,
+        <a href="https://photos.app.goo.gl/zLG6k5iWadigup3u2">slow and jerky</a>,
+        <a href="https://photos.app.goo.gl/m1AeTD3aG28OY4kF3"> aggressive and smooth</a>,
+        <a href="https://photos.app.goo.gl/cxgtVSfsLYTcjtik2https://photos.app.goo.gl/cxgtVSfsLYTcjtik2"> aggressive and jerky</a>) to the graphs we
+        produced from the data to qualitatively assess their accuracy.
+
+
+
+      </p>
     </div>
       <div class="w3-col m6">
         <figure>
           <img src="{{ url_for('static', filename='Ihats.png') }}" id = "g3" style="width:600px;height:400px;">
-          <figcaption>Fig.3 - Validation of our rotation matrix using unit vector Ihat in the khat direction. </figcaption>
+          <figcaption>Fig.5 - Validation of our rotation matrix using unit vector Ihat in the khat direction. </figcaption>
         </figure>
       </div>
     </div>
     <div class="w3-row-padding">
       <div class="w3-col m6">
         <h3>Dead Ends</h3>
-        <p  style="font-size:15px">We did a lot of work that did not really pan out.</p>
+        <p  style="font-size:15px">
+          One of our initial goals was to determine a way to assess not only the comfort of someone's driving but also the safety of their driving through
+          analyzing the magnitude of jerk. We were unable to incorporate this aspect of analysis into our final product because we did not have enough time
+          to determine the best way to filter the data without also filtering out the jerk.
+          <br>
+          <br>
+          Initially we also wanted to use the acceleration measured on the phone to determine the position of the driver in the global frame. After working
+          on this challenge for some time we determined that mapping accelerations in the phone’s frame to the global frame was not going to be as accurate
+          as we had hoped due to drifting data. See Figures 5 and 6 for a visual representation of the data drifting in the khat direction.
+          <br>
+          <br>
+          In addition to using rotating reference frames in our project we also analyzed the frequency of the acceleration. While, this analysis did
+          not provide us with any insightful information about driving style it was interesting to have completed.
+
+
+
+
+        </p>
       </div>
         <div class="w3-col m6">
           <figure>
             <img src="{{ url_for('static', filename='velocity_globalF.jpg') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.4 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <figcaption>Fig.6 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
           </figure>
           <figure>
             <img src="{{ url_for('static', filename='velocity_globalF_drift.jpg') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.5 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <figcaption>Fig.7 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
           </figure>
         </div>
       </div>
@@ -149,8 +205,14 @@ body, html {
 <div class="w3-container" style="padding:128px 16px" id="about">
   <h3 class="w3-center"  style="font-size:30px">NEXT STEPS</h3>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p style="font-size:15px">One of our initial goals was to determine a way to asses no only the comfort of someones driving but also the safety of their driving. We were unable to
-      encorporate this aspect of analysis into our final product because..</p>
+    <p style="font-size:15px">
+
+      One of our initial outcomes was to determine the safety of someone’s driving through analyzing the data collected on the phone. We were unable to do so for this pass
+      because we did not have the time to determine the best way to classify someone’s driving as either safe or unsafe. Our current model makes it easy to see differences
+      in drivers, but we choose to make no objective statement about what makes a driver safe or not because the scaled integral of the acceleration changes based on how
+      fast you drive even if you are driving smoothly..
+
+    </p>
   </div>
 </div>
 
@@ -166,7 +228,7 @@ body, html {
   <a href="https://drive.google.com/open?id=0B1Q9ZaUOL0C2Y1h3MmpRcUl6UlU">Loading and filtering data</a>
   </p>
   <p class="w3-center w3-large">
-  <a href="url">Analysis</a>
+  <a href="https://drive.google.com/file/d/0B1Q9ZaUOL0C2cGJyTmhMZ3NFd00/view?usp=sharing">Analysis</a>
   </p>
   <p class="w3-center w3-large">
   <a href="url">Matlab Notebook PDF</a>
@@ -180,7 +242,7 @@ body, html {
   <h3 class="w3-center"  style="font-size:30px">THE CLASS</h3>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
     <p  style="font-size:15px">"The QEA experiment is a designated alternative for Signals and Systems, Dynamics, Linearity 1 and 2 and a foundational physics course;
-    our hope is this experiment will lead to a more coherent ‘analysis stream’ down the road” Mark Somerville.</p>
+    our hope is this experiment will lead to a more coherent ‘analysis stream’ down the road” - Mark Somerville.</p>
   </div>
   <h3 class="w3-center"  style="font-size:30px">THE TEAM</h3>
   <p class="w3-center w3-large">Maggie Rosner and Colvin Chapman</p>
@@ -190,7 +252,6 @@ body, html {
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
 </body>
