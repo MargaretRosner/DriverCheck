@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>QEA: DriverCheck</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -44,33 +44,28 @@ body, html {
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Check Your Driving</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Check your Driving</span><br>
-    <span class="w3-large">Visualizing bad practice to create better drivers</span>
+    <span class="w3-large">Quantitatively and objectively assessing comfort of driving</span>
     <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more today</a></p>
   </div>
 </header>
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE PROJECT</h3>
-  <p class="w3-center w3-large">DESCRIPTION</p>
+  <h3 class="w3-center" style="font-size:30px">ABOUT THE PROJECT</h3>
+  <p class="w3-center w3-large" style="font-size:25px">DESCRIPTION</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p>Settling the classic argument of "who is the better driver" through analysis of driver jerk and aggressiveness.</p>
+    <p style="font-size:15px">As part of a project for our Quantitive Enineering Analysis class at Olin College we created a proof of concept model for an app that would enable car drivers to
+      quantitatively asses the comfort of their driving based on the magnitude of acceleration and jerk.</p>
   </div>
-  <p class="w3-center w3-large">USERS</p>
+  <p class="w3-center w3-large"  style="font-size:25px">USERS</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p>Any individual looking to better understand driving style<br>
-    We envision our app being used my a diverse audience which could include:</p>
-    <ul>
-      <li>Parents of New Drivers</li>
-      <li>Driving Schools</li>
-      <li>Car Rental Companies</li>
-    </ul>
+    <p  style="font-size:15px">Any individual looking to better understand driving style.
+    We envision our app being used my a diverse audience which could include: parents, driving instructors, and new drivers</p>
   </div>
-  <p class="w3-center w3-large">Our MVP</p>
+  <p class="w3-center w3-large"  style="font-size:25px">Our MVP</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p>Our MVP analyzes two different aspects of driving, aggressiveness and Jerk, based on accelerometer and gyroscope data collected using a user's phone and synthesizes
-      the analysis.
-      <br>We then visualize this data in a useful and compelling manner so drivers can easily understand and compare their driving styles.</p>
+    <p  style="font-size:15px">Our MVP analyzes two different aspects of driving, aggressiveness and Jerk, based on accelerometer and gyroscope data collected using a user's phone and synthesizes
+      the analysis. We then visualize this data in a useful and compelling manner so drivers can easily understand and compare their driving styles.</p>
   </div>
 </div>
 
@@ -79,7 +74,7 @@ body, html {
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Sensor Selection</h3>
-      <p>We choose to leverage the sensors already present in a users phone to create our application.<br>
+      <p  style="font-size:15px">We choose to leverage the sensors already present in a users phone to create our application.<br>
         We used the PowerSense iphone app to collect the data needed to create our app.
       <br> See Figure 1. for a visuilization of the type of data collected.</p>
     </div>
@@ -92,8 +87,8 @@ body, html {
   </div>
   <div class="w3-row-padding">
     <div class="w3-col m6">
-      <h3>Overview</h3>
-      <p>Using acceleration and gyro data collected from a users smartphone we rotated the accelerations measured by the phone into the global frame and filteres the data to remove
+      <h3>Proof of Concept</h3>
+      <p  style="font-size:15px">Using acceleration and gyro data collected from a users smartphone we rotated the accelerations measured by the phone into the global frame and filteres the data to remove
         high frequencies caused by vibrations in the car itself.<br>
         We then... </p>
     </div>
@@ -104,15 +99,25 @@ body, html {
       </figure>
     </div>
     <div class="w3-col m6">
-      <h3>Analysis of "Good Driving"</h3>
-      <p>To analyze the quality of a driver we...</p>
+      <h3>Comfort Analysis</h3>
+      <p tyle="font-size:15px">To analyze the quality of a driver we...</p>
+    </div>
+    <div class="w3-col m6">
+      <figure>
+        <img src="{{ url_for('static', filename='ComfortGraph.png') }}" id = "g1" style="width:600px;height:400px;">
+        <figcaption>Fig.2 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
+      </figure>
+      <figure>
+        <img src="{{ url_for('static', filename='BarGraph.png') }}" id = "g1" style="width:600px;height:400px;">
+        <figcaption>Fig.2 - Comfort was assesed through using the scaled integrals in the global frame </figcaption>
+      </figure>
     </div>
   </div>
   <br>
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Validation</h3>
-      <p>To validate our model the first thing we did was check our rotation matrix<br>tempor incididunt ut labore et dolore.</p>
+      <p  style="font-size:15px">To validate our model the first thing we did was check our rotation matrix<br>tempor incididunt ut labore et dolore.</p>
     </div>
       <div class="w3-col m6">
         <figure>
@@ -121,25 +126,50 @@ body, html {
         </figure>
       </div>
     </div>
+    <div class="w3-row-padding">
+      <div class="w3-col m6">
+        <h3>Dead Ends</h3>
+        <p  style="font-size:15px">We did a lot of work that did not really pan out.</p>
+      </div>
+        <div class="w3-col m6">
+          <figure>
+            <img src="{{ url_for('static', filename='velocity_globalF.jpg') }}" id = "g3" style="width:600px;height:400px;">
+            <figcaption>Fig.4 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+          </figure>
+          <figure>
+            <img src="{{ url_for('static', filename='velocity_globalF_drift.jpg') }}" id = "g3" style="width:600px;height:400px;">
+            <figcaption>Fig.5 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+          </figure>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Next Steps -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center"  style="font-size:30px">NEXT STEPS</h3>
+  <div class="w3-row-padding w3-center" style="margin-top:10px">
+    <p style="font-size:15px">One of our initial goals was to determine a way to asses no only the comfort of someones driving but also the safety of their driving. We were unable to
+      encorporate this aspect of analysis into our final product because..</p>
   </div>
 </div>
 
 <!-- Links Section -->
 <div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">LINKS</h3>
-  <p class="w3-center w3-large">The Pitch: QEA 10/23/2017</p>
+  <h3 class="w3-center" style="font-size:30px">LINKS</h3>
+  <p class="w3-center w3-large" style="font-size:25px">The Pitch: QEA 10/23/2017</p>
   <p class="w3-center w3-large">
   <a href="https://docs.google.com/presentation/d/15uuBpJbfVPo0_WVuwS9a6kxYaQT1qdnZ40NcJw1B5k4/edit?usp=sharing"> View our Presentation!</a>
   </p>
-  <p class="w3-center w3-large">Matlab Functions</p>
+  <p class="w3-center w3-large" style="font-size:25px">Matlab Scripts</p>
   <p class="w3-center w3-large">
-  <a href="url">Loading and filtering data</a>
+  <a href="https://drive.google.com/open?id=0B1Q9ZaUOL0C2Y1h3MmpRcUl6UlU">Loading and filtering data</a>
   </p>
   <p class="w3-center w3-large">
   <a href="url">Analysis</a>
   </p>
   <p class="w3-center w3-large">
-  <a href="url">Visualization</a>
+  <a href="url">Matlab Notebook PDF</a>
   </p>
 
 
@@ -147,16 +177,14 @@ body, html {
 
 <!-- Team Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE CLASS</h3>
+  <h3 class="w3-center"  style="font-size:30px">THE CLASS</h3>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p>As part of a project for our Quantitive Enineering Analysis class we created a proof of concept model for an app that would enable car drivers to asses their driving
-      quantitatively</p>
+    <p  style="font-size:15px">"The QEA experiment is a designated alternative for Signals and Systems, Dynamics, Linearity 1 and 2 and a foundational physics course;
+    our hope is this experiment will lead to a more coherent ‘analysis stream’ down the road” Mark Somerville.</p>
   </div>
-  <h3 class="w3-center">THE TEAM</h3>
+  <h3 class="w3-center"  style="font-size:30px">THE TEAM</h3>
   <p class="w3-center w3-large">Maggie Rosner and Colvin Chapman</p>
 </div>
-
-
 
 
 <!-- Footer -->
