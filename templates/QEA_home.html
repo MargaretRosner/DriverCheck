@@ -54,29 +54,24 @@ body, html {
   <h3 class="w3-center" style="font-size:30px">THE PROJECT</h3>
   <p class="w3-center w3-large" style="font-size:25px">DESCRIPTION</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p style="font-size:15px">As part of a project for our Quantitative Engineering Analysis class at Olin College we created a proof of concept model
-      for an app that would enable car drivers to quantitatively asses the comfort of their driving based on the magnitude of acceleration and jerk
-      (quick changes in acceleration) measured on their smartphones while driving.
-
-
-
+    <p style="font-size:15px">As part of a project for our Quantitative Engineering Analysis class at Olin College, we created a proof of concept model for an app that
+      would enable car drivers to quantitatively asses the comfort of their driving based on the magnitude of acceleration and jerk (quick changes in acceleration)
+      measured on their smartphones while driving.
     </p>
   </div>
   <p class="w3-center w3-large"  style="font-size:25px">USERS</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p  style="font-size:15px">AAny individual looking to better understand driving style.
-      We envision our app being used by a diverse audience which could include: new drivers, parents, and driving instructors.
-
-
+    <p  style="font-size:15px"> Our app would benefit any individual looking to better understand their driving style.
+      We envision our app being used by a diverse audience including: new drivers, parents, driving instructors,
+      and friends in a disagreement over who’s the better driver.
   </p>
   </div>
   <p class="w3-center w3-large"  style="font-size:25px">Our MVP</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p  style="font-size:15px">Our MVP analyzes two different aspects of driving, aggressiveness and jerk, based on accelerometer and gyroscope data collected using a
-       user's phone. The data is then analyzed for comfort based on acceleration and jerk magnitude. To present the data in a useful and compelling manner we then
-       visualize the analysis so drivers can easily understand and compare their driving styles.
-
-
+    <p  style="font-size:15px">Our MVP analyzes two different aspects of driving, aggressiveness and jerk. Aggressiveness refers to the maximum acceleration that
+      someone is willing to take on  based on accelerometer and gyroscope data collected using a user's phone. The data is then analyzed for comfort based on both
+      jerk and acceleration magnitudes. To present the data in a useful and compelling manner we then visualize the analysis so drivers can easily understand and
+      compare their driving styles.
     </p>
   </div>
 </div>
@@ -115,8 +110,12 @@ body, html {
     </div>
     <div class="w3-col m6">
       <figure>
+        <img src="{{ url_for('static', filename='roofphone.jpg') }}" id = "g1" style="width:400px;height:200px;">
+        <figcaption>Fig.2 - Smartphone mounted on roof of vehicle </figcaption>
+      </figure>
+      <figure>
         <img src="{{ url_for('static', filename='GlobalAcc.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.2 - Of a car driving in an ellipse </figcaption>
+        <figcaption>Fig.3 - Accelerations of a car driving in an ellipse in the global frame. </figcaption>
       </figure>
     </div>
     <div class="w3-col m6">
@@ -133,11 +132,11 @@ body, html {
     <div class="w3-col m6">
       <figure>
         <img src="{{ url_for('static', filename='ComfortGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.3 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
+        <figcaption>Fig.4 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
       </figure>
       <figure>
         <img src="{{ url_for('static', filename='BarGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.4 - Comfort was assesed as the scaled integrals in the global frame </figcaption>
+        <figcaption>Fig.5 - Comfort was assesed as the scaled integrals in the global frame </figcaption>
       </figure>
     </div>
   </div>
@@ -161,7 +160,7 @@ body, html {
       <div class="w3-col m6">
         <figure>
           <img src="{{ url_for('static', filename='Ihats.png') }}" id = "g3" style="width:600px;height:400px;">
-          <figcaption>Fig.5 - Validation of our rotation matrix using unit vector Ihat in the khat direction. </figcaption>
+          <figcaption>Fig.6 - Validation of our rotation matrix using unit vector Ihat in the khat direction. </figcaption>
         </figure>
       </div>
     </div>
@@ -190,11 +189,11 @@ body, html {
         <div class="w3-col m6">
           <figure>
             <img src="{{ url_for('static', filename='velocity_globalF.jpg') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.6 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <figcaption>Fig.7 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
           </figure>
           <figure>
             <img src="{{ url_for('static', filename='velocity_globalF_drift.jpg') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.7 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <figcaption>Fig.8 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
           </figure>
         </div>
       </div>
