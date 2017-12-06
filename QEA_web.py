@@ -1,5 +1,5 @@
 '''
-Flask webapp for QEA M2 Project 2
+Flask webapp for QEA Final Project
 '''
 
 from flask import Flask
