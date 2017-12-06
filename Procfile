@@ -1,1 +1,1 @@
-web: gunicorn QEA_webpage:app --log-file -
+web: gunicorn QEA_web:app --log-file -
