@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>QEA: Final</title>
+<title>QEA: Passive Walker</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -43,34 +43,47 @@ body, html {
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-black" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Passive Dynamic Walking</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Check your Driving</span><br>
     <span class="w3-large">Designing an Efficient, Stable, Passive Walker </span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more today</a></p>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more today!</a></p>
   </div>
 </header>
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
   <h3 class="w3-center" style="font-size:30px">THE PROJECT</h3>
-  <p class="w3-center w3-large" style="font-size:25px">DESCRIPTION</p>
-  <div class="w3-row-padding w3-center" style="margin-top:10px">
-    <p style="font-size:15px">
-      We chose to model the dynamics of a passive dynamic walker for our final QEA project because we wanted to get more expereince with dynamics as well as
-      simulations and physical modeling.
-    </p>
-  </div>
 
   <p class="w3-center w3-large"  style="font-size:25px">Why Passive Walking?</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
     <p  style="font-size:15px">
-      Passive Dynamic walking is the most efficient form of walking because it propels a peidal mechanism using only gravity.
+      Passive Dynamic walking is defined as the dynamical behavior of walking when not drawing energy from a supply.
+      Passive walking in its simplest  form is a multi-legged system that once started on a slope can fall into a steady gait.
+      It is the most efficient way to mimic a human’s gait because the mechanism is propelled using only gravity.
+      By understanding the dynamics of this system one is able to harvest the “free” energy  of gravity and integrate it into
+      controllers to create the most efficient walking systems. These lessons learned can be applied to areas such as lower limb prosthetics and robotics.
+      <br>
+      <br>
+      We chose to build and  model the dynamics of a passive dynamic walker for our final QEA project because we wanted to gain
+      experience in dynamics, simulations and physical modeling. Additionally we wanted to do a project that could connect us to our
+      target audience, the QEA class of next year. This project was a fantastic learning experience for both of the group members.
+      We were able to take a deep dive into dynamics, find resources independently, learn modeling/simulations and more.
+      This would be a fantastic project for future students to do. We hope by demonstrating our interpretation of
+      the project and by thoroughly documenting our process we will be able to influence future years!
+
   </p>
   </div>
 
   <p class="w3-center w3-large"  style="font-size:25px">Our MVP</p>
   <div class="w3-row-padding w3-center" style="margin-top:10px">
     <p  style="font-size:15px">
-      Our MVP is a straignt leggd walker that can take two steps down a slope of 5 degrees. It's name is Tad
+      Our MVP is a both a physical and simulation model of a 2D parallel straight legged dynamic walker that represents human legs without knees.
+      Our model can propel itself down a shallow slope around 6 degrees using only gravity. We aimed to meet this scope of MVP due to the short time
+      frame for the project.
+      <br>
+      <br>
+      There are many fascinating directions one could go in with a passive walkers. One could add an additional pendulum on each leg
+      (essentially adding a knee); one could focus on the inertia matrix of the problem and experiment with only having 2 legs and have the mechanism wobble;
+      or one introduce springs into the ankles, hips, or knees and achieve a steady gait on a flat surface. With more time there multiple ways we could focus
+      on extending our projec
     </p>
   </div>
 </div>
@@ -78,116 +91,299 @@ body, html {
 <!-- Promo Section - "We know design" -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
   <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>The Model</h3>
-      <p  style="font-size:15px">
-      We choose to...
-    </p>
-    </div>
-    <!--
-    <div class="w3-col m6">
-    <figure>
-      <img src="{{ url_for('static', filename='Headings.png') }}" id = "g2" style="width:600px;height:400px;">
-      <figcaption>Fig.1 - Sensor data of phone position in three axis after driving in an ellipse.</figcaption>
-    </figure>
-    </div>
-  </div>
--->
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
+    <!--<div class="w3-col m6">--->
       <h3>Research</h3>
       <p  style="font-size:15px">
-        Before we started anything we each read some papers about the Passive Dynamic Walker problem to understand the different approaches people had taken
-        in the past. Based on the papers we decided that the best approach to the problem would be to use Lagrangian Dynamics!
+        We began this project by devoting our time to researching the project. We read multiple papers about the Passive Dynamic Walker
+        problem to understand the different approaches people had taken in the past. We first wanted to understand this problem in the frame of the original paper,
+        Walking control of a semi-passive biped robot based on repetitive control algorithm  written by McGeer (links and citations can be found in the citations
+        section below). McGeer is credited for proving the usefulness of this dynamics projects and most passive walkers are derived in some manner from his paper.
+        In the paper McGeer covers the difference static and dynamic walking, the shape and purpose feet, and steady walking for a 2D Biped Walker. We were able to
+        use this paper to develop an understanding of the inertia tensor matrix and the importance of “rimless” wheels (aka feet of the machine).
+        <br>
+        <br>
+        Since 1990, when McGeer’s paper was published, many universities and researchers have published papers on this fascinating project.
+        After reviewing some of these papers we decided to learn Lagrangian mechanics so that we could set up our project without relying on coordinate systems.
+        This was invaluable because this let us evaluate angular motions, and x-y translation at the same time. We were additionally able to use Hamiltonian mechanics
+        as a validation test that our energy was conserved throughout our calculations.
+        <br>
+        <br>
+        After learning Lagrange mechanics (see the “Overnight Assignment” link) we began to take a deeper dive into the approach the papers took to calculating a
+        stable system.  We began to analyze the dynamics in  Walking control of a semi-passive biped robot based on repetitive control algorithm written by Yali Zhou
+        and Qizhi Zhang. We rederived the dynamics of the swing phase equations presented in the paper and were able to gain a deeper understanding for how to approach
+        the reference frames of our system and the connection between the energies of each moving object and the Lagrange equation. The paper additionally presented a
+        new angle we could analyze the project from; this paper focused on creating a Biped walker that could  walk on flat ground by placing a spring in between the
+        two legs. This was helpful in understanding how to approach collision transformations, and provided clear base parameter for modeling.
+        <br>
+        <br>
+        The final paper that we did through analysis of was The Simplest Walking Model: Stability, Complexity, and Scaling written by Garcia.
+        This paper was an ideal source to develop our understanding of the system we planned to create. The paper demonstrated a simple 2D biped walking
+        down a slope. It offered an important insight into how to incorporate the angle of the ramp into our problem. Additionally the section on collision
+        transformation at heel strike was another perspective of the problem and helped us derive our collision equations. The paper additionally went through
+        understanding gait cycles which helped us understand the stability evaluation of passive walkers.
       </p>
-    </div>
+  <!--  </div> -->
 
     <div class="w3-row-padding">
-      <div class="w3-col m6">
+<div class="w3-col m6">
         <h3>Frames of Motion</h3>
         <p  style="font-size:15px">
-          Here we have drawn our frames of motion for the problem.
+          When we first approached the project one of the most useful tools for understanding was visualizing the frames of motion of our machine.
+          We focused mainly on predicting the optimal angles needed during collision and the orientation of the feet during swing phases. Below you
+          can see our predicted frames of motion and screen captures demonstrating our real model’s frames of motion.
         </p>
-      </div>
+</div>
 
     <div class="w3-col m6">
       <figure>
-        <img src="{{ url_for('static', filename='passivewalker.png') }}" id = "g3" style="width:600px;height:400px;">
-        <figcaption>Fig.6 - Frame of motion for the dynamic walker walking down a ramp </figcaption>
+        <img src="{{ url_for('static', filename='FOM1.JPG') }}" id = "g3" style="width:600px;height:400px;">
+        <figcaption>Fig.1 - Frame of motion for our predicted walker behavior walking down a ramp.</figcaption>
       </figure>
-    </div>
-    </div>
+</div>
+
+      <figure>
+        <img src="{{ url_for('static', filename='FOMreal.png') }}" id = "g3" style="width:1400px;height:400px;" lign="middle">
+        <figcaption>Fig.2 - Frame of motion for our working walker walking down a ramp.</figcaption>
+      </figure>
+
+</div>
+
+
     <div class="w3-row-padding">
-      <div class="w3-col m6">
+
         <h3>Deriving Equations of Motion</h3>
         <p  style="font-size:15px">
-          We used pen and paper!
+          To derive the equations of motion for our system we chose to use Lagrangian mechanics. Part of the motivation behind the use of the
+          Euler Lagrange equations to model our passive walker system was to make it easier to describe the motion of the walker using polar coordinates.
+
+          <figure>
+            <img src="{{ url_for('static', filename='coords_qea.JPG') }}" id = "g3" style="width:300px;height:200px;">
+            <figcaption>Fig.3 - 2D coordinated for the foot (m) and hip (N) point masses </figcaption>
+          </figure>
+
+          Once we had defined the movement of our two rotating bodies (the swing foot and hip) in polar coordinates we derived the kinetic and
+          potential energy equations for the swing phase. The energy equations factored in the slope of the ramp but did not include the change in
+          height of the walker in the global frame as it traveled down the ramp. We determined that the energy artificially gained by the height
+          remaining the same as the machine walked down would be negligible when combined with the energy loss from friction between the ramp and
+          the foot as well as energy lost during heel strike.
+
+          <figure>
+            <img src="{{ url_for('static', filename='PE.png') }}" id = "g3" style="width:800px;height:200px;">
+            <figcaption>Fig.4 - Potential Energy Equations for Passive Walker </figcaption>
+          </figure>
+
+          After we had determined the energy equation we used the Euler Lagrange equation to derive the equations of motion for
+          the model which resulted in two governing equations for angle Theta and Phi.
+          <figure>
+            <img src="{{ url_for('static', filename='LE.png') }}" id = "g3" style="width:600px;height:200px;">
+            <figcaption>Fig.5 - Equations of Motion </figcaption>
+          </figure>
 
         </p>
-      </div>
+
     </div>
-      <!--
-      </div>
-        <div class="w3-col m6">
-          <figure>
-            <img src="{{ url_for('static', filename='Ihats.png') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.6 - Validation of our rotation matrix using unit vector Ihat in the khat direction. </figcaption>
-          </figure>
-        </div>
-      </div>
-    -->
+
     <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Modeling</h3>
+
+      <h3>Simulation</h3>
       <p>
-  We used Matlab!
-
-
+        Due to the nature of this project we decided to create a simulation. This would allow us to have a visualization of our system’s output based on
+        multiple varying parameters. This would both allow us to test our project in hundreds over variations but also provide an intuitive presentation
+        of how the dynamics affect the physical system.
+       <br>
+       <br>
+      We first approached the simulating our system by modeling one of the example problems we had worked through while learning Lagrange in order to
+      understand the steps that go into creating a Mathmatica simulation. After gaining a basic understanding of simulations by modeling first, a single
+      pendulum and then, a double pendulum, we were able to attempt to model the machine in, Walking control of a semi-passive biped robot based on repetitive
+      control algorithm. By using the equations of motion we had previously rederived from this paper we were able to calculate the Lagrangian for a single swing phase.
+       We were able to then simulate the passive walker taking a single step forward.
+      <br>
+      <br>
+      We then used this simulation as a base for our simulation and substituted in the equations of motion we had derived for a pendulum on a slope.
+      We then simulated the walked on a slope. We finally added in a second step; this included adding our collision transformation matrix and changing
+      the origin of the rotated reference frame to always be around the plant foot. We were then able to manipulate the visual output of the simulation to
+      model these changes. We then incorporated a loop that allowed us to step multiple times and began experimenting with parameters. We were also able to
+      derive conclusive motion graphs of the parameters as they changed over time.
       </p>
-    </div>
+
+    <div class="w3-col m6">
+
+      <iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=uzNoLf7ZUu4&feature=youtu.be">
+</iframe>
 </div>
+  <div class="w3-col m6">
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=d-5uE8_P-ZE&feature=youtu.be">
+</iframe>
+
+    </div>
+  </div>
+
+
     <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Vailidation</h3>
+
+      <h3>Fabrication</h3>
       <p>
-        We defietly will do this.
+        One of the challenges of creating a physical model as part of our final product for this project was the timeline of the project itself.
+        Because of the condensed timeline we started designing the physical system before we had a fully flushed model. This meant ideal parameters of our
+        system, hip mass, swing mass, and leg length, had not been fully optimized prior to starting the CAD. Additionally, due to uncalculated forces in the
+         model that would appear in the real world, we wanted to ensure that the physical walker allowed for some variance in build to account for the
+         models imperfections.
+        <br>
+        <br>
+        When designing the physical walker we made design decisions based on the assumptions we made while designing the model. In creating the physical model
+        we had assumed that the legs would have a negligible mass compared to the mass of the hip. We also assumed that, since our model was done in 2D, the
+        mass of the hip and swing foot would be evenly distributed along the 3D axis.
+        <br>
+        <br>
+        Additionally, order to account for the variance between the model and the physical world we designed the legs of the walker to be adjustable and the
+        feet to be interchangeable so we could test different parameters that had worker in our simulation in the real world. We designed the walker with a rough
+        set of parameters, laser our design, and manufactured the walker before moving forward with accuracy evaluation and physical testing.
       </p>
     </div>
-  </div>
-    <!--
+
     <div class="w3-col m6">
       <figure>
-        <img src="{{ url_for('static', filename='ComfortGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.4 - Graph depicting the magnitude of the acceleration with different controlled driving styles.</figcaption>
+        <img src="{{ url_for('static', filename='CADFinal1.JPG') }}" id = "g1" style="width:600px;height:500px;">
+        <figcaption>Fig.6 - Final view of our CAD assembly.</figcaption>
       </figure>
+    </div>
+<div class="w3-col m6">
       <figure>
-        <img src="{{ url_for('static', filename='BarGraph.png') }}" id = "g1" style="width:600px;height:400px;">
-        <figcaption>Fig.5 - Comfort was assesed as the scaled integrals in the global frame. The higher the comfort score, the more uncomfortable the
-          driving is assumed to be. </figcaption>
+        <img src="{{ url_for('static', filename='RWWalker.jpg') }}" id = "g1" style="width:600px;height:500px;">
+        <figcaption>Fig.7 - Our manufactured passive walker. </figcaption>
       </figure>
     </div>
   </div>
--->
+
     <div class="w3-row-padding">
-      <div class="w3-col m6">
-        <h3>Fabrication</h3>
+
+        <h3>Validation</h3>
         <p  style="font-size:15px">
-          Where we talk about the making of Tad if that happens.
-        </p>
-      </div>
-      <!--
+          We validated our system multiple ways. For the model we validated it by testing extreme cases for our parameters.
+          These consistently produced results that we expected and we therefore thought our model was valid. We also validated our model
+          by checking the conservation of energy of our system using the Hamiltonian equation (Figure ) this faithfully alerted us when
+          our physics wasn’t correct and made it easy to find broken spots in the code.
+          <br>
+          <br>
+
+          <div class="w3-col m6">
+            <figure>
+              <img src="{{ url_for('static', filename='Hamiltonian.PNG') }}" id = "g3" style="width:600px;height:400px;">
+              <figcaption>Fig.8 - Hamiltonian Energy.</figcaption>
+            </figure>
+  </div>
+
+
+  <div class="w3-col m6">
+            <figure>
+              <img src="{{ url_for('static', filename='Lagrange.PNG') }}" id = "g3" style="width:600px;height:400px;">
+              <figcaption>Fig.9 - Lagrange Energy </figcaption>
+            </figure>
+          </div>
+
+        We were able to use graphs of the predicted angles and angular velocities to develop an understanding of
+        what our model was doing. By predicting where the collisions for the walker should be and the
+        trajectory of the angles we were able to validate the physical system that we created. Additionally, we were able to
+        validate our model against the analysis of other passive walkers, to prove that our results were reasonable.
+  <br>
+  <br>
+  <div class="w3-col m6">
+    <figure>
+      <img src="{{ url_for('static', filename='AngleOTime.PNG') }}" id = "g3" style="width:600px;height:400px;">
+      <figcaption>Fig.10 - Model angle over time. </figcaption>
+    </figure>
+</div>
+
+
+<div class="w3-col m6">
+    <figure>
+      <img src="{{ url_for('static', filename='AngleVOTime.PNG') }}" id = "g3" style="width:600px;height:400px;">
+      <figcaption>Fig.11 - Angular velocity over time. </figcaption>
+    </figure>
+  </div>
+</div>
+        We additionally were able to build a physical model of our system. We tested this physical system against our model and
+        were able to see very similar performance between both! When we set the physical model’s parameters to parameters that
+        failed in our model the system failed in the same way, at the same time (Figure  and   ). Additionally, we were able to
+        produce a simulation that took multiple steps using parameters from our physical system that could also take multiple steps.
         <div class="w3-col m6">
           <figure>
-            <img src="{{ url_for('static', filename='VelocitiesTrim.png') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.7 - Velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <img src="{{ url_for('static', filename='AS1.JPG') }}" id = "g3" style="width:600px;height:400px;">
+            <figcaption>Fig.12 - Working starting angle of the passive walker trial 1.</figcaption>
           </figure>
+</div>
+
+
+<div class="w3-col m6">
           <figure>
-            <img src="{{ url_for('static', filename='Velocities_Untrimmed.png') }}" id = "g3" style="width:600px;height:400px;">
-            <figcaption>Fig.8 - The drift of velocity plotted in the global fram calculated from the acceleration data collected. </figcaption>
+            <img src="{{ url_for('static', filename='AS2.JPG') }}" id = "g3" style="width:600px;height:400px;">
+            <figcaption>Fig.13 - Working starting angle of the passive walker trial 2. </figcaption>
           </figure>
         </div>
+
+
+
+        </p>
+
+        
       </div>
-    -->
+
+
+
+      <div class="w3-row-padding">
+          <h3>Next Steps</h3>
+          <p  style="font-size:15px">
+            We are planning on presenting this project at our college’s expo next week which means that we have almost an extra 33% of time to work on the project!
+            <br>
+            <br>
+            Before Expo we would love to be able to:
+            <br>
+            <br>
+              - Refine our physical model
+              <br>
+              <br>
+            This means reprinting the walker with final parameters decided and a more solid assembly.  We also would like to finalize the ramp and create a y-axis
+            out of more professional material.
+            <br>
+            <br>
+              - Create a more stable system that is able to achieve more than three steps
+              <br>
+              <br>
+            We believe this is currently an obstacle because of the missing factors in our energy calculations.
+            By factoring these changes in we believe we will be able to achieve a more robust model.  Additionally we
+            believe if we further calculate the inertia of our legs with feet (hollow semi-circles) on them instead of
+            calculating them as rods, our model will become more accurate.
+            <br>
+            <br>
+              - Make our website even more amazing (we would like to use this in our portfolios).
+            <br>
+            <br>
+            After Expo we would like to write a paper about everything we’ve learned in formal language both to get
+            more experience with writing papers, but also to document what we’ve learned.
+
+
+          </p>
+        </div>
+
+        <div class="w3-row-padding">
+          <div class="w3-col m6">
+            <h3>Citations</h3>
+            <p  style="font-size:15px">
+              Garcia, Mariano, et al. "The simplest walking model: stability, complexity, and scaling." J Biomech Eng Trans ASME 120.2 (1998): 281-288.
+              <br>
+              <br>
+              McGeer, Tad. "Passive dynamic walking." I. J. Robotic Res.9.2 (1990): 62-82.
+              <br>
+              <br>
+              Zhou, Yali, and Qizhi Zhang. "Walking control of a semi-passive biped robot based on repetitive control algorithm." Control Conference (CCC), 2017 36th Chinese. IEEE, 2017.
+
+            </p>
+          </div>
+</div>
+</div>
+<!--
       <div class="w3-row-padding">
         <div class="w3-col m6">
           <h3>Reflection</h3>
@@ -198,22 +394,39 @@ body, html {
         </div>
 
   </div>
-</div>
+-->
 
+</div>
+</div>
 <!-- Links Section -->
-<div class="w3-container" style="padding:128px 16px" id="work">
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
   <h3 class="w3-center" style="font-size:30px">LINKS</h3>
 
-  <p class="w3-center w3-large" style="font-size:25px">Matlab Scripts</p>
+  <p class="w3-center w3-large" style="font-size:25px">Project Deliverables</p>
   <p class="w3-center w3-large">
-  <a href="   ">Matlab 1</a>
+  <a href="   ">Overnight Assignment</a>
+  </p>
+  <p class="w3-center w3-large"</a>
+  <a href="   ">Adventure Map>
+  </p>
+
+  <p class="w3-center w3-large" style="font-size:25px">Video Links</p>
+
+  <p class="w3-center w3-large">
+  <a href="https://photos.app.goo.gl/SGEIYJyLIqYBdnL42">Taking Steps</a>
   </p>
   <p class="w3-center w3-large">
-  <a href="   ">Analysis Matlab</a>
+  <a href="https://photos.app.goo.gl/KYWnF798Hn6e5gat1">The First "Working" Step</a>
+  </p>
+
+  <p class="w3-center w3-large" style="font-size:25px">Mathematica/Matlab</p>
+  <p class="w3-center w3-large">
+  <a href="   ">Mathematica Notebook</a>
   </p>
   <p class="w3-center w3-large">
-  <a href="   ">Overnight Assignment PDF/a>
+  <a href="   ">Matlab</a>
   </p>
+
 </div>
 
 <!-- Team Section -->
